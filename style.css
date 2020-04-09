@@ -2,10 +2,10 @@
 
 :root {
   --font: "Nunito Sans", sans-serif;
-  --transition: all .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  --transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 
   --lightgray: rgb(139, 139, 139);
-  --orange: #EB3C00;
+  --orange: #eb3c00;
   --black: #262626;
 }
 
@@ -15,7 +15,7 @@
   box-sizing: border-box;
 }
 
-html{
+html {
   font-size: 62.5%;
 }
 
@@ -63,7 +63,7 @@ nav .container {
   width: 3.2rem;
 }
 
-.logo span{
+.logo span {
   font-size: 2rem;
   font-weight: 600;
   margin-left: 1rem;
@@ -78,10 +78,10 @@ nav .container {
 
 .menu-btn > div {
   width: 2.5rem;
-  height: .3rem;
+  height: 0.3rem;
   background: #262626;
   border-radius: 1.5rem;
-  margin: .4rem 0;
+  margin: 0.4rem 0;
 }
 
 #toggle {
@@ -97,7 +97,7 @@ nav .container {
   margin-right: 10rem;
 }
 
-.navigation li{
+.navigation li {
   height: 100%;
   position: relative;
   z-index: 2;
@@ -105,7 +105,7 @@ nav .container {
   transition: var(--transition);
 }
 
-.navigation li a{
+.navigation li a {
   position: relative;
   font-size: 1.8rem;
   font-weight: 400;
@@ -116,37 +116,37 @@ nav .container {
   transition: var(--transition);
 }
 
-.navigation li a::before{
+.navigation li a::before {
   content: "";
   position: absolute;
   bottom: 0;
   left: -100%;
   width: 100%;
-  height: .4rem;
+  height: 0.4rem;
   background-color: var(--orange);
   transition: var(--transition);
 }
 
-.navigation li a:hover{
+.navigation li a:hover {
   color: var(--orange);
 }
 
-.navigation li a:hover::before{
+.navigation li a:hover::before {
   left: 0;
 }
 
 @media only screen and (max-width: 768px) {
-  .logo img{
+  .logo img {
     width: 2.5rem;
   }
-  .logo span{
+  .logo span {
     font-size: 1.6rem;
   }
   .navigation {
     position: absolute;
     top: 10vh;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     background: whitesmoke;
     height: 90vh;
     width: 100%;
@@ -163,13 +163,14 @@ nav .container {
   .logo {
     margin-left: 5rem;
   }
-  .navigation li{
+  .navigation li {
     display: flex;
     height: initial;
+    margin: 2rem 0;
     justify-content: center;
     align-items: center;
   }
-  .navigation li a{
+  .navigation li a {
     height: initial;
     padding-bottom: 1rem;
     font-size: 2.2rem;
@@ -192,30 +193,49 @@ nav .container {
   display: flex;
 }
 
+.hero-content h1,
+.hero-content p,
+.hero-content .show-more {
+  margin: 0 10rem;
+}
+
 .hero-content {
+  position: relative;
   width: 45%;
   height: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
 }
 
-.hero-content > * {
-  margin: 0 10rem;
-}
-
-.hero-content h1{
+.hero-content h1 {
   color: var(--black);
   font-size: 7rem;
   font-weight: 600;
   line-height: 1.15;
+  position: relative;
+  z-index: 2;
 }
 
-.hero-content h1 span{
+.hero-content h1::before {
+  content: "";
+  position: absolute;
+  background: url(img/orange-pattern.svg) center no-repeat;
+  background-size: cover;
+  width: 15rem;
+  height: 15rem;
+  top: -6rem;
+  left: -4rem;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.hero-content h1 span {
   color: var(--orange);
 }
 
-.hero p{
+.hero-content p {
   font-size: 2.4rem;
   font-weight: 200;
   margin: 2.5rem 0 3rem 0;
@@ -224,7 +244,20 @@ nav .container {
   line-height: 1.75;
 }
 
-.show-more{
+.hero-content::before {
+  content: "";
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 30rem;
+  height: 30rem;
+  background: url(img/black-pattern.svg) center no-repeat;
+  background-size: cover;
+  z-index: -1;
+  opacity: .1;
+}
+
+.show-more {
   position: relative;
   z-index: 2;
   font-size: 2rem;
@@ -241,7 +274,7 @@ nav .container {
   transition: var(--transition);
 }
 
-.show-more::before{
+.show-more::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -253,44 +286,53 @@ nav .container {
   transition: var(--transition);
 }
 
-.show-more:hover{
+.show-more:hover {
   color: #fff;
 }
 
-.show-more:hover::before{
+.show-more:hover::before {
   left: 0;
 }
 
-@media only screen and (max-width: 768px){
-  .hero{
+@media only screen and (max-width: 768px) {
+  .hero {
     flex-direction: column;
     height: 150vh;
   }
-  .hero-content{
+  .hero-content {
     width: 100%;
     height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .hero-img{
+  .hero-content::before{
+    display: none;
+  }
+  .hero-img {
     width: 100%;
     height: 60vh;
   }
-  .hero-content > * {
+  .hero-content h1,
+  .hero-content p,
+  .hero-content .show-more {
     margin: 0;
   }
-  .hero h1{
+  .hero h1 {
     text-align: center;
     padding: 0 1rem;
     font-size: 6.5rem;
   }
-  .hero p{
+  .hero-content h1::before {
+    display: none;
+  }
+  .hero-content p {
     text-align: center;
     padding: 0 1rem;
+    margin: 2.5rem 0 3rem 0;
     font-size: 2rem;
   }
-  .show-more{
+  .show-more {
     width: 70%;
     font-size: 2rem;
   }
