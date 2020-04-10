@@ -1,9 +1,10 @@
 const btn = document.querySelector(".menu-btn");
 const nav = document.querySelector(".navigation");
+const lines = document.querySelectorAll(".menu-btn div");
 
 btn.addEventListener("click", function () {
   nav.classList.toggle("show");
-  document.querySelector(".line1").classList.toggle("active");
-  document.querySelector(".line2").classList.toggle("active");
-  document.querySelector(".line3").classList.toggle("active");
+  lines.forEach((line) => {
+    line.classList.toggle("active");
+  });
 });
