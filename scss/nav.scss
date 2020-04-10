@@ -43,13 +43,13 @@ nav {
       margin: 0.4rem 0;
       transition: $transition;
     }
-    .line1.active{
+    .line1.active {
       transform: rotate(-45deg) translate(-5px, 5px);
     }
-    .line2.active{
+    .line2.active {
       opacity: 0;
     }
-    .line3.active{
+    .line3.active {
       transform: rotate(45deg) translate(-5px, -5px);
     }
   }
@@ -61,7 +61,7 @@ nav {
     height: 100%;
     margin-right: 10rem;
 
-    &.show{
+    &.show {
       transform: translateX(0);
     }
 
