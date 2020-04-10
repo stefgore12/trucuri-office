@@ -1,4 +1,4 @@
-@import '_config';
+@import "_config";
 /* HERO SECTION */
 
 .hero-img {
@@ -23,54 +23,56 @@
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
- h1,p,.show-more {
-  margin: 0 10rem;
-              }
+  h1,
+  p,
+  .show-more {
+    margin: 0 10rem;
+  }
   h1 {
-  color: $black;
-  font-size: 7rem;
-  font-weight: 600;
-  line-height: 1.15;
-  position: relative;
-  z-index: 2;
+    color: $black;
+    font-size: 7rem;
+    font-weight: 600;
+    line-height: 1.15;
+    position: relative;
+    z-index: 2;
+    &::before {
+      content: "";
+      position: absolute;
+      background: url(../img/orange-pattern.svg) center no-repeat;
+      background-size: cover;
+      width: 15rem;
+      height: 15rem;
+      top: -6rem;
+      left: -4rem;
+      opacity: 0.1;
+      z-index: -1;
+    }
+    span {
+      color: $orange;
+    }
+  }
+
+  p {
+    font-size: 2.4rem;
+    font-weight: 200;
+    margin: 2.5rem 0 3rem 0;
+    color: $lightgray;
+    padding: 0 10rem;
+    line-height: 1.75;
+  }
+
   &::before {
     content: "";
     position: absolute;
-    background: url(../img/orange-pattern.svg) center no-repeat;
+    bottom: -10%;
+    right: -10%;
+    width: 30rem;
+    height: 30rem;
+    background: url(../img/black-pattern.svg) center no-repeat;
     background-size: cover;
-    width: 15rem;
-    height: 15rem;
-    top: -6rem;
-    left: -4rem;
-    opacity: 0.1;
     z-index: -1;
-            }
-  span {
-  color: $orange;
-        }
-    }
-
-    p {
-  font-size: 2.4rem;
-  font-weight: 200;
-  margin: 2.5rem 0 3rem 0;
-  color: $lightgray;
-  padding: 0 10rem;
-  line-height: 1.75;
-    }
-  
-    &::before {
-  content: "";
-  position: absolute;
-  bottom: -10%;
-  right: -10%;
-  width: 30rem;
-  height: 30rem;
-  background: url(../img/black-pattern.svg) center no-repeat;
-  background-size: cover;
-  z-index: -1;
-  opacity: 0.1;
-        }
+    opacity: 0.1;
+  }
 }
 .show-more {
   position: relative;
@@ -87,26 +89,25 @@
   width: 50%;
   overflow: hidden;
   transition: $transition;
-  
-  &::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: -100%;
-  background-color: $orange;
-  z-index: -1;
-  transition: $transition;
-          }
-    &:hover {
-         color: #fff;
-              } 
-   &:hover::before {
-    left: 0;
-      }
-}
 
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background-color: $orange;
+    z-index: -1;
+    transition: $transition;
+  }
+  &:hover {
+    color: #fff;
+  }
+  &:hover::before {
+    left: 0;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .hero {
