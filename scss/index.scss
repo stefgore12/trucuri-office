@@ -84,9 +84,7 @@
   z-index: 2;
   font-size: 2rem;
   font-weight: 300;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %center;
   text-align: center;
   color: $orange;
   border: 2px solid $orange;
@@ -118,33 +116,42 @@
   .hero {
     flex-direction: column;
     height: 150vh;
+
     h1 {
       text-align: center;
       padding: 0 1rem;
       font-size: 6.5rem;
     }
   }
+
   .hero-content {
     width: 100%;
     height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend %center;
+
     &::before {
       display: none;
     }
+
     h1,
     p,
     .show-more {
       margin: 0;
     }
+
     h1::before {
       display: none;
     }
+
     p {
       text-align: center;
       padding: 0 1rem;
       margin: 2.5rem 0 3rem 0;
+      font-size: 2rem;
+    }
+
+    .show-more {
+      width: 70%;
       font-size: 2rem;
     }
   }
@@ -152,10 +159,6 @@
   .hero-img {
     width: 100%;
     height: 60vh;
-  }
-  .show-more {
-    width: 70%;
-    font-size: 2rem;
   }
 }
 
@@ -183,7 +186,7 @@
       content: "";
       position: absolute;
       bottom: 0rem;
-      right: -10%;
+      right: -5%;
       width: 20rem;
       height: 20rem;
       background: url(../img/orange-pattern.svg) center no-repeat;
@@ -196,6 +199,7 @@
       width: 45%;
     }
   }
+  
   .about-content {
     width: 55%;
     @extend %center;

@@ -17,6 +17,10 @@ nav {
     align-items: center;
     margin-left: 10rem;
 
+    a{
+      @extend %center;
+    }
+
     img {
       width: 3.2rem;
     }
