@@ -15,7 +15,7 @@ nav {
     width: 25rem;
     display: flex;
     align-items: center;
-    margin-left: 10rem;
+    margin-left: 15rem;
 
     a{
       @extend %center;
@@ -63,7 +63,7 @@ nav {
     align-items: center;
     width: 50%;
     height: 100%;
-    margin-right: 10rem;
+    margin-right: 15rem;
 
     &.show {
       transform: translateX(0);

@@ -10,7 +10,7 @@
 }
 
 .hero-img {
-  width: 55%;
+  width: 45%;
   height: 100%;
   background: url(../img/hero.jpg) center no-repeat;
   background-size: cover;
@@ -18,7 +18,7 @@
 
 .hero-content {
   position: relative;
-  width: 45%;
+  width: 55%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -28,7 +28,7 @@
   h1,
   p,
   .show-more {
-    margin: 0 10rem;
+    margin: 0 15rem;
   }
 
   h1 {
@@ -42,10 +42,10 @@
     &::before {
       content: "";
       position: absolute;
-      background: url(../img/orange-pattern.svg) center no-repeat;
+      background: url(../img/orange-square.svg) center no-repeat;
       background-size: cover;
-      width: 15rem;
-      height: 15rem;
+      width: 20rem;
+      height: 20rem;
       top: -6rem;
       left: -4rem;
       opacity: 0.1;
@@ -62,15 +62,15 @@
     font-weight: 200;
     margin: 2.5rem 0 3rem 0;
     color: $lightgray;
-    padding: 0 10rem;
+    padding: 0 15rem;
     line-height: 1.75;
   }
 
   &::before {
     content: "";
     position: absolute;
-    bottom: -12%;
-    right: -10%;
+    bottom: -7rem;
+    right: -7rem;
     width: 30rem;
     height: 30rem;
     background: url(../img/black-pattern.svg) center no-repeat;
@@ -167,19 +167,21 @@
 // About office //
 
 .about-office {
-  height: 60vh;
+  height: 100vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   position: relative;
   z-index: 2;
   overflow-x: hidden;
 
   > div {
-    height: 100%;
+    height: 50%;
+    display: flex;
   }
 
   .about-img {
-    width: 45%;
+    width: 50%;
     position: relative;
     z-index: 2;
     @extend %center;
@@ -187,23 +189,23 @@
     &::before {
       content: "";
       position: absolute;
-      bottom: 0rem;
-      right: -5%;
+      bottom: -2rem;
+      right: -10rem;
       width: 20rem;
       height: 20rem;
-      background: url(../img/orange-pattern.svg) center no-repeat;
+      background: url(../img/black-pattern.svg) center no-repeat;
       background-size: cover;
-      opacity: 0.07;
+      opacity: 0.05;
       z-index: -1;
     }
 
     img {
-      width: 40%;
+      width: 27.5rem;
     }
   }
 
   .about-content {
-    width: 55%;
+    width: 50%;
     @extend %center;
     flex-direction: column;
     align-items: start;
@@ -215,9 +217,9 @@
       position: absolute;
       top: -1rem;
       right: -1rem;
-      width: 25rem;
-      height: 25rem;
-      background: url(../img/black-pattern.svg) center no-repeat;
+      width: 40rem;
+      height: 40rem;
+      background: url(../img/black-square.svg) center no-repeat;
       transform: rotate(45deg);
       background-size: cover;
       opacity: 0.05;
@@ -238,7 +240,73 @@
       line-height: 1.75;
       color: $lightgray;
       font-weight: 200;
-      padding-right: 10rem;
+      padding-right: 15rem;
+    }
+  }
+
+  .apps-content {
+    width: 50%;
+    @extend %center;
+    align-items: start;
+    flex-direction: column;
+
+    > * {
+      margin-left: 15rem;
+    }
+
+    h3 {
+      font-size: 5rem;
+      margin-bottom: 2rem;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -5rem;
+        left: -5rem;
+        width: 15rem;
+        height: 15rem;
+        background: url(../img/orange-pattern.svg) center no-repeat;
+        background-size: cover;
+        z-index: -1;
+        opacity: 0.1;
+      }
+    }
+
+    p {
+      font-size: 2.4rem;
+      line-height: 1.75;
+      color: $lightgray;
+      font-weight: 200;
+    }
+  }
+
+  .apps-icons {
+    width: 50%;
+    @extend %center;
+    flex-direction: column;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 20rem;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 25rem;
+      height: 25rem;
+      background: url(../img/orange-square.svg) center no-repeat;
+      background-size: cover;
+      opacity: 0.2;
+      z-index: -1;
+    }
+
+    > div > img {
+      margin: 0 2rem;
+      width: 6.5rem;
+    }
+    .row1 {
+      margin-bottom: 3rem;
     }
   }
 }
@@ -246,7 +314,11 @@
 @media only screen and (max-width: 768px) {
   .about-office {
     flex-direction: column;
-    height: 80vh;
+    height: 160vh;
+
+    > div {
+      flex-direction: column;
+    }
 
     .about-img {
       width: 100%;
@@ -258,7 +330,7 @@
       }
 
       img {
-        width: 40%;
+        width: 17rem;
       }
     }
 
@@ -282,60 +354,8 @@
         padding: 0 2rem;
       }
     }
-  }
-}
 
-// Apps //
-
-.apps {
-  height: 40vh;
-  width: 100%;
-  display: flex;
-
-  &-content {
-    width: 55%;
-    @extend %center;
-    align-items: start;
-    flex-direction: column;
-
-    > * {
-      margin-left: 10rem;
-    }
-
-    h3 {
-      font-size: 5rem;
-      margin-bottom: 2rem;
-    }
-
-    p {
-      font-size: 2.4rem;
-      line-height: 1.75;
-      color: $lightgray;
-      font-weight: 200;
-    }
-  }
-
-  &-icons {
-    width: 45%;
-    @extend %center;
-    flex-direction: column;
-
-    > div > img {
-      margin: 0 2rem;
-      width: 6.5rem;
-    }
-    .row1 {
-      margin-bottom: 3rem;
-    }
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .apps {
-    height: 60vh;
-    flex-direction: column;
-
-    &-icons {
+    .apps-icons {
       width: 100%;
       height: 50%;
 
@@ -344,12 +364,16 @@
         width: 6rem;
       }
 
+      &::before {
+        display: none;
+      }
+
       .row2 {
         transform: translateX(0%);
       }
     }
 
-    &-content {
+    .apps-content {
       width: 100%;
       height: 50%;
       align-items: center;
@@ -361,6 +385,10 @@
 
       h3 {
         font-size: 4.5rem;
+
+        &::before{
+          display: none;
+        }
       }
 
       p {
