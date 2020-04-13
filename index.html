@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/nav.css">
     <title>Trucuri in Office</title>
@@ -58,20 +59,78 @@
             </div>
             <div class="apps-icons">
                 <div class="row1">
-                    <img src="img/word.svg" alt="">
-                    <img src="img/excel.svg" alt="">
-                    <img src="img/powerpoint.svg" alt="">
+                    <img data-app="Word" src="img/word.svg" alt="">
+                    <img data-app="Excel" src="img/excel.svg" alt="">
+                    <img data-app="PowerPoint" src="img/powerpoint.svg" alt="">
                 </div>
                 <div class="row2">
-                    <img src="img/access.svg" alt="">
-                    <img src="img/onenote.svg" alt="">
-                    <img src="img/publisher.svg" alt="">
+                    <img data-app="Access" src="img/access.svg" alt="">
+                    <img data-app="OneNote" src="img/onenote.svg" alt="">
+                    <img data-app="Publisher" src="img/publisher.svg" alt="">
                 </div>
             </div>
         </div>
     </section>
 
+    <div class="top-tricks">
+        <h3>Top <span>Trucuri</span></h3>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="img img1"></div>
+                    <div class="content">
+                        <h4><span>#1</span> Format your document quickly</h4>
+                        <p>Want to copy the format of one object to another? Select the object, select Format Painter, then use your cursor to select the next object. Repeat this to apply it to more places.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img img2"></div>
+                    <div class="content">
+                        <h4><span>#2</span> One-click fixes for accessibility issues<h4>
+                        <p>Click Review > Check Accessibility to make sure your messages and documents can be read by people of all abilities. Available in all Office apps.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img img3"></div>
+                    <div class="content">
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img img4"></div>
+                    <div class="content">
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img img5"></div>
+                    <div class="content">
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img img6"></div>
+                    <div class="content">
+
+                    </div>
+                </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
     <script src="nav.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 </body>
 
 </html>
