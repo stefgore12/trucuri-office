@@ -504,3 +504,34 @@
     }
   }
 }
+
+// footer //
+
+footer{
+  height: 50vh;
+  border: 1px solid orange;
+
+  .container{
+    width: calc(100% - 30rem);
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  
+    > *{
+      height: 100%;
+      width: 33.33%;
+      border: 1px solid red;
+      @extend %center;
+    }
+  }
+
+  .social-media{
+    flex-direction: column;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+  }
+}
