@@ -386,7 +386,7 @@
       h3 {
         font-size: 4.5rem;
 
-        &::before{
+        &::before {
           display: none;
         }
       }
@@ -398,6 +398,93 @@
 
       > * {
         margin-left: 0;
+      }
+    }
+  }
+}
+
+// Top Tricks //
+
+.top-tricks {
+  height: 70vh;
+  width: 100%;
+  @extend %center;
+  flex-direction: column;
+
+  h3{
+    font-size: 5rem;
+    margin-bottom: 2rem;
+
+    span{
+      color: $orange;
+    }
+  }
+
+  .swiper-container {
+    border: 1px solid rgba($orange, .3);
+    height: 70%;
+    width: calc(100% - 30rem);
+    position: relative;
+    z-index: 2;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: $orange;
+    }
+
+    .swiper-wrapper {
+      > div {
+        @extend %center;
+      }
+    }
+
+    .swiper-slide {
+      display: flex;
+
+      > div {
+        height: 100%;
+      }
+
+      .img {
+        width: 45%;
+        height: 100%;
+      }
+
+      .img1 {
+        background: url(../img/top-tricks/tip1.jpg) center no-repeat;
+        background-size: cover;
+      }
+
+      .img2 {
+        background: url(../img/top-tricks/tip2.png) center no-repeat;
+        background-size: cover;
+      }
+
+      .content {
+        width: 55%;
+        @extend %center;
+        flex-direction: column;
+        align-items: start;
+
+        > *{
+          margin: 0 5rem;
+        }
+
+        h4{
+          font-size: 3rem;
+          margin-bottom: 2rem;
+
+          span{
+            color: $orange;
+          }
+        }
+
+        p{
+          font-size: 2rem;
+          color: $lightgray;
+          font-weight: 200;
+          line-height: 1.75;
+        }
       }
     }
   }
