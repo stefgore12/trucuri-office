@@ -468,7 +468,7 @@
       width: 80%;
       z-index: 9;
       margin-left: 15rem;
-      border: 1px solid rgba($orange, 0.2);
+      // border: 1px solid rgba($orange, 0.2);
       background-color: #fff;
 
       .swiper-button-next,
@@ -519,6 +519,7 @@
             @extend %center;
             align-items: start;
             flex-direction: column;
+            background-color: whitesmoke;
 
             > * {
               margin: 0 5rem;
