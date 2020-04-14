@@ -407,102 +407,189 @@
 // Top Tricks //
 
 .top-tricks {
-  height: 70vh;
-  width: 100%;
-  @extend %center;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 80vh;
 
-  h3 {
-    font-size: 5rem;
-    margin-bottom: 2rem;
-    text-align: center;
+  > div {
+    height: 100%;
+    @extend %center;
+  }
 
-    span {
-      color: $orange;
+  .tt-heading {
+    width: 45%;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      background: url(../img/orange-square.svg) center no-repeat;
+      background-size: cover;
+      opacity: 0.1;
+    }
+
+    h3 {
+      font-size: 6.5rem;
+
+      span {
+        color: $orange;
+      }
     }
   }
 
-  .swiper-container {
-    border: 1px solid rgba($orange, 0.3);
-    height: 70%;
-    width: calc(100% - 30rem);
+  .slider {
+    width: 55%;
+    position: relative;
 
-    .swiper-button-next,
-    .swiper-button-prev {
-      color: $orange;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -5rem;
+      width: 20rem;
+      height: 20rem;
+      background: url(../img/black-pattern.svg) center no-repeat;
+      background-size: cover;
+      opacity: 0.1;
+      z-index: -1;
     }
 
-    .swiper-wrapper {
-      > div {
-        @extend %center;
-      }
-    }
+    .swiper-container {
+      height: 80%;
+      width: 80%;
+      z-index: 9;
+      margin-left: 15rem;
+      border: 1px solid rgba($orange, 0.2);
+      background-color: #fff;
 
-    .swiper-slide {
-      display: flex;
-
-      > div {
-        height: 100%;
-      }
-
-      .img {
-        width: 45%;
-        height: 100%;
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: $orange;
       }
 
-      .img1 {
-        background: url(../img/top-tricks/tip1.jpg) center no-repeat;
-        background-size: cover;
-      }
+      .swiper-wrapper {
+        
+        > div {
+          display: flex;
+          flex-direction: column;
+          background-color: #fff;
+          cursor: grab;
 
-      .img2 {
-        background: url(../img/top-tricks/tip2.png) center no-repeat;
-        background-size: cover;
-      }
-      .img3 {
-        background: url(../img/top-tricks/tip3.png) center no-repeat;
-        background-size: cover;
-      }
-      .img4 {
-        background: url(../img/top-tricks/tip4.png) center no-repeat;
-        background-size: cover;
-      }
-      .img5 {
-        background: url(../img/top-tricks/tip5.png) center no-repeat;
-        background-size: cover;
-      }
-      .img6 {
-        background: url(../img/top-tricks/tip6.png) center no-repeat;
-        background-size: cover;
-      }
-
-      .content {
-        width: 55%;
-        @extend %center;
-        flex-direction: column;
-        align-items: start;
-
-        > * {
-          margin: 0 5rem;
-        }
-
-        h4 {
-          font-size: 3rem;
-          margin-bottom: 2rem;
-
-          span {
-            color: $orange;
+          .img {
+            height: 60%;
           }
-        }
 
-        p {
-          font-size: 2rem;
-          color: $lightgray;
-          font-weight: 200;
-          line-height: 1.75;
+          .img1 {
+            background: url(../img/top-tricks/tip1.jpg) center no-repeat;
+            background-size: cover;
+          }
+
+          .img2 {
+            background: url(../img/top-tricks/tip2.png) center no-repeat;
+            background-size: cover;
+          }
+          .img3 {
+            background: url(../img/top-tricks/tip3.png) center no-repeat;
+            background-size: cover;
+          }
+          .img4 {
+            background: url(../img/top-tricks/tip4.png) center no-repeat;
+            background-size: cover;
+          }
+          .img5 {
+            background: url(../img/top-tricks/tip5.png) center no-repeat;
+            background-size: cover;
+          }
+          .img6 {
+            background: url(../img/top-tricks/tip6.png) center no-repeat;
+            background-size: cover;
+          }
+
+          .content {
+            height: 40%;
+            @extend %center;
+            align-items: start;
+            flex-direction: column;
+
+            > * {
+              margin: 0 5rem;
+            }
+
+            h4 {
+              font-size: 2.5rem;
+              margin-bottom: 1rem;
+
+              span {
+                color: $orange;
+              }
+            }
+
+            p {
+              font-size: 1.6rem;
+              color: $lightgray;
+              font-weight: 200;
+              line-height: 1.5;
+            }
+          }
         }
       }
     }
   }
 }
 
+@media only screen and (max-width: 768px){
+  .top-tricks{
+    flex-direction: column;
+    height: 100vh;
+
+    .tt-heading{
+      width: 100%;
+      height: 10%;
+
+      &::before{
+        display: none;
+      }
+
+      h3{
+        font-size: 4.5rem;
+      }
+    }
+
+    .slider{
+      width: 100%;
+      height: 90%;
+
+      &::before{
+        display: none;
+      }
+
+      .swiper-container{
+        width: 90%;
+        height: 80%;
+        margin-left: 0;
+        margin: 0 auto;
+
+        .swiper-wrapper{
+          > div {
+  
+            .img{
+              height: 40%;
+            }
+            .content{
+              height: 60%;
+
+              h4{
+                font-size: 2.2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
