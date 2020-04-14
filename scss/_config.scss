@@ -13,7 +13,9 @@ $blue:  #2b579a;
   align-items: center;
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
