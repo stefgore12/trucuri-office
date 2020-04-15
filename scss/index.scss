@@ -43,7 +43,7 @@
     &::before {
       content: "";
       position: absolute;
-      background: url(../img/orange-square.svg) center no-repeat;
+      background: url(../img/patterns/orange-square.svg) center no-repeat;
       background-size: cover;
       width: 20rem;
       height: 20rem;
@@ -70,11 +70,11 @@
   &::before {
     content: "";
     position: absolute;
-    bottom: -7rem;
-    right: -7rem;
-    width: 30rem;
-    height: 30rem;
-    background: url(../img/black-pattern.svg) center no-repeat;
+    bottom: 0rem;
+    right: 0rem;
+    width: 20rem;
+    height: 20rem;
+    background: url(../img/patterns/black-pattern.svg) center no-repeat;
     background-size: cover;
     z-index: -1;
     opacity: 0.1;
@@ -185,6 +185,7 @@
     width: 50%;
     background: url(../img/about1.jpg) center no-repeat;
     background-size: cover;
+    z-index: 3;
   }
 
   .about-content {
@@ -193,6 +194,7 @@
     flex-direction: column;
     align-items: start;
     position: relative;
+    background: rgb(253, 253, 253);
     z-index: 2;
 
     > * {
@@ -204,9 +206,9 @@
       position: absolute;
       top: -1rem;
       right: -1rem;
-      width: 40rem;
-      height: 40rem;
-      background: url(../img/black-square.svg) center no-repeat;
+      width: 45rem;
+      height: 45rem;
+      background: url(../img/patterns/black-square.svg) center no-repeat;
       transform: rotate(45deg);
       background-size: cover;
       opacity: 0.05;
@@ -237,18 +239,20 @@
     align-items: start;
     flex-direction: column;
     position: relative;
+    z-index: 2;
+    overflow: hidden;
 
     &::before {
       content: "";
       position: absolute;
-      top: 50%;
-      left: 50%;
+      bottom: 3.5rem;
+      left: 3.5rem;
       width: 40rem;
       height: 40rem;
-      background: url(../img/orange-square.svg) center no-repeat;
-      transform: rotate(45deg) translate(-50%, -50%);
+      background: url(../img/patterns/orange-square.svg) center no-repeat;
+      transform: rotate(45deg);
       background-size: cover;
-      opacity: 0.07;
+      opacity: 0.05;
       z-index: -1;
     }
 
@@ -302,6 +306,10 @@
         display: none;
       }
 
+      &::after {
+        display: none;
+      }
+
       > * {
         margin-left: 0;
       }
@@ -313,7 +321,7 @@
       p {
         font-size: 2.2rem;
         padding-right: 0;
-        padding: 0 5rem;
+        padding: 0 2.5rem;
       }
     }
 
@@ -327,6 +335,10 @@
         display: none;
       }
 
+      &::after {
+        display: none;
+      }
+
       > * {
         margin: 0;
       }
@@ -337,7 +349,7 @@
 
       p {
         font-size: 2.2rem;
-        padding: 0 5rem;
+        padding: 0 2.5rem;
       }
     }
 
@@ -348,97 +360,193 @@
   }
 }
 
+// AVANTAJE //
+
+.benefits {
+  width: 100%;
+  height: 90vh;
+  @extend %center;
+  text-align: center;
+  flex-direction: column;
+
+  h3 {
+    font-size: 5.5rem;
+    margin: 5rem 0;
+
+    span {
+      color: $orange;
+    }
+  }
+
+  &-container {
+    width: calc(100% - 30rem);
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    place-items: center;
+
+    .card {
+      width: 70%;
+      height: 90%;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      @extend %center;
+      flex-direction: column;
+      background: url(../img/patterns/memphis-mini.png);
+      position: relative;
+      z-index: 2;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(#fff, 0.5);
+        z-index: -1;
+      }
+
+      img {
+        width: 10rem;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        font-size: 1.8rem;
+        padding: 0 3.5rem;
+        font-weight: 300;
+        color: $lightgray;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .benefits {
+    height: 200vh;
+
+    h3 {
+      font-size: 4.5rem;
+      padding: 0 1rem;
+    }
+
+    &-container {
+      width: 90%;
+      height: 90%;
+      grid-template-columns: 1fr;
+      grid-gap: 3rem;
+      grid-template-rows: repeat(6, 1fr);
+
+      .card {
+        width: 70%;
+        height: 100%;
+
+        img {
+          width: 7rem;
+        }
+
+        p {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}
+
 // Top Tricks //
 
 .top-tricks {
   width: 100%;
   height: 80vh;
   @extend %center;
-  background-color: rgb(253, 253, 253);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
 
   .swiper-button-next,
-  .swiper-button-prev{
+  .swiper-button-prev {
     color: $orange;
   }
 
-  .swiper-container{
+  .swiper-container {
     width: calc(100% - 30rem);
     height: 70%;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     background-color: #fff;
-    
-    .swiper-slide{
+
+    .swiper-slide {
       display: flex;
       width: 100%;
       height: 100%;
       cursor: grab;
 
-      &:first-of-type{
-
+      &:first-of-type {
         @extend %center;
         position: relative;
         z-index: 2;
-        background: url(../img/memphis-mini.png);
+        background: url(../img/patterns/memphis-mini.png);
 
-        &::before{
+        &::before {
           content: "";
           position: absolute;
           width: 100%;
           height: 100%;
           top: 0;
           left: 0;
-          background: rgba(#fff, .5);
+          background: rgba(#fff, 0.5);
           z-index: -1;
         }
 
-        h3{
+        h3 {
           font-size: 7.5rem;
           text-align: center;
 
-          span{
+          span {
             color: $orange;
           }
         }
       }
 
-      .slide-img{
+      .slide-img {
         width: 50%;
         height: 100%;
 
-        img{
+        img {
           width: 100%;
           height: 100%;
         }
 
-        &1{
+        &1 {
           background: url(../img/top-tricks/tip1.png) center no-repeat;
           background-size: cover;
         }
 
-        &2{
+        &2 {
           background: url(../img/top-tricks/tip2.png) center no-repeat;
           background-size: cover;
         }
 
-        &3{
+        &3 {
           background: url(../img/top-tricks/tip3.png) center no-repeat;
           background-size: cover;
         }
-        &4{
+        &4 {
           background: url(../img/top-tricks/tip44.png) center no-repeat;
           background-size: cover;
         }
-        &5{
+        &5 {
           background: url(../img/top-tricks/tip5.png) center no-repeat;
           background-size: cover;
         }
-        &6{
+        &6 {
           background: url(../img/top-tricks/tip6.png) center no-repeat;
           background-size: cover;
         }
       }
 
-      .slide-content{
+      .slide-content {
         width: 50%;
         height: 100%;
         @extend %center;
@@ -446,33 +554,33 @@
         flex-direction: column;
         position: relative;
         z-index: 2;
-        background: url(../img/memphis-mini.png);
+        background: url(../img/patterns/memphis-mini.png);
 
-        &::before{
+        &::before {
           content: "";
           position: absolute;
           width: 100%;
           height: 100%;
           top: 0;
           left: 0;
-          background: rgba(#fff, .7);
+          background: rgba(#fff, 0.7);
           z-index: -1;
         }
 
-        > *{
+        > * {
           margin: 0 10rem 0 5rem;
         }
 
-        h4{
+        h4 {
           font-size: 2.8rem;
           margin-bottom: 1.5rem;
 
-          span{
+          span {
             color: $orange;
           }
         }
 
-        p{
+        p {
           font-size: 1.8rem;
           color: $lightgray;
           font-weight: 200;
@@ -483,54 +591,52 @@
   }
 }
 
-@media only screen and (max-width: 768px){
-  .top-tricks{
+@media only screen and (max-width: 768px) {
+  .top-tricks {
     height: 90vh;
 
-    .swiper-container{
+    .swiper-container {
       width: 90%;
       height: 80%;
 
-      .swiper-slide{
+      .swiper-slide {
+        flex-direction: column;
 
-        flex-direction: column;  
-        
-        .slide-img{
+        .slide-img {
           width: 100%;
           height: 40%;
         }
 
-        .slide-content{
+        .slide-content {
           width: 100%;
           height: 60%;
 
-          > *{
+          > * {
             margin: 0 5rem;
           }
 
-          h4{
+          h4 {
             font-size: 2.2rem;
             margin-bottom: 1rem;
           }
 
-          p{
+          p {
             font-size: 1.6rem;
             line-height: 1.5;
           }
         }
 
-        &:first-of-type{
-          h3{
+        &:first-of-type {
+          h3 {
             font-size: 5.5rem;
             padding: 0 5rem;
-  
-            span{
+
+            span {
               color: $orange;
             }
           }
         }
-      } 
-     
+      }
     }
   }
 }

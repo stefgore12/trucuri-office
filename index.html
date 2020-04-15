@@ -58,8 +58,37 @@
             <div class="apps-img"></div>
         </div>
     </section>
+    <div class="benefits">
+        <h3>Ce <span>avantaje </span>iti aduc aceste trucuri?</h3>
+        <div class="benefits-container">
+            <div class="card">
+                <img src="img/benefits/knowledge.svg" alt="">
+                <p>Iti actualizezi cunostintele</p>
+            </div>
+            <div class="card">
+                <img src="img/benefits/perspective.svg" alt="">
+                <p>Obti o noua perspectiva asupra proiectelor</p>
+            </div>
+            <div class="card">
+                <img src="img/benefits/time-management.svg" alt="">
+                <p>Lucrezi rapid si eficient</p>
+            </div>
+            <div class="card">
+                <img src="img/benefits/innovation.svg" alt="">
+                <p>Oferi impact proiectului tau</p>
+            </div>
+            <div class="card">
+                <img src="img/benefits/laptop.svg" alt="">
+                <p>Devi expert al aplicatiilor office</p>
+            </div>
+            <div class="card">
+                <img src="img/benefits/analytics.svg" alt="">
+                <p>Creezi un proiect profesional</p>
+            </div>
+        </div>
+    </div>
 
-    <div class="top-tricks">
+    <section class="top-tricks">
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -127,13 +156,15 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
-    </div>
+    </section>
 
+    
     <script src="nav.js"></script>
     <script src="https://kit.fontawesome.com/46b54f638d.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script>
         var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
