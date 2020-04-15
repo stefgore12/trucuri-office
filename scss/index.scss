@@ -10,7 +10,7 @@
 }
 
 .hero-img {
-  width: 45%;
+  width: 50%;
   height: 100%;
   background: url(../img/hero.jpg) center no-repeat;
   background-size: cover;
@@ -18,7 +18,7 @@
 
 .hero-content {
   position: relative;
-  width: 55%;
+  width: 50%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -36,6 +36,7 @@
     font-size: 7rem;
     font-weight: 600;
     line-height: 1.15;
+    margin-right: 10rem;
     position: relative;
     z-index: 2;
 
@@ -167,7 +168,7 @@
 // About office //
 
 .about-office {
-  height: 100vh;
+  height: 140vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -182,26 +183,8 @@
 
   .about-img {
     width: 50%;
-    position: relative;
-    z-index: 2;
-    @extend %center;
-
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: -2rem;
-      right: -10rem;
-      width: 20rem;
-      height: 20rem;
-      background: url(../img/black-pattern.svg) center no-repeat;
-      background-size: cover;
-      opacity: 0.05;
-      z-index: -1;
-    }
-
-    img {
-      width: 27.5rem;
-    }
+    background: url(../img/about1.jpg) center no-repeat;
+    background-size: cover;
   }
 
   .about-content {
@@ -211,6 +194,10 @@
     align-items: start;
     position: relative;
     z-index: 2;
+
+    > * {
+      margin-left: 15rem;
+    }
 
     &::before {
       content: "";
@@ -227,7 +214,7 @@
     }
 
     h3 {
-      font-size: 5rem;
+      font-size: 5.5rem;
       margin-bottom: 2rem;
 
       span {
@@ -249,28 +236,29 @@
     @extend %center;
     align-items: start;
     flex-direction: column;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40rem;
+      height: 40rem;
+      background: url(../img/orange-square.svg) center no-repeat;
+      transform: rotate(45deg) translate(-50%, -50%);
+      background-size: cover;
+      opacity: 0.07;
+      z-index: -1;
+    }
 
     > * {
-      margin-left: 15rem;
+      margin: 0 15rem;
     }
 
     h3 {
-      font-size: 5rem;
+      font-size: 5.5rem;
       margin-bottom: 2rem;
-      position: relative;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: -5rem;
-        left: -5rem;
-        width: 15rem;
-        height: 15rem;
-        background: url(../img/orange-pattern.svg) center no-repeat;
-        background-size: cover;
-        z-index: -1;
-        opacity: 0.1;
-      }
     }
 
     p {
@@ -281,63 +269,32 @@
     }
   }
 
-  .apps-icons {
+  .apps-img {
     width: 50%;
-    @extend %center;
-    flex-direction: column;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 20rem;
-      transform: translate(-50%, -50%) rotate(45deg);
-      width: 25rem;
-      height: 25rem;
-      background: url(../img/orange-square.svg) center no-repeat;
-      background-size: cover;
-      opacity: 0.2;
-      z-index: -1;
-    }
-
-    > div > img {
-      margin: 0 2rem;
-      width: 6.5rem;
-      position: relative;
-    }
-    .row1 {
-      margin-bottom: 3rem;
-    }
+    background: url(../img/about2.jpg) center no-repeat;
+    background-size: cover;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .about-office {
-    flex-direction: column;
-    height: 160vh;
+    height: 200vh;
 
     > div {
       flex-direction: column;
     }
 
-    .about-img {
-      width: 100%;
-      height: 45%;
-      align-items: flex-end;
-
-      &::before {
-        display: none;
-      }
-
-      img {
-        width: 17rem;
-      }
+    .about-1 {
+      flex-direction: column-reverse;
     }
 
-    .about-content {
+    .about-img {
+      height: 50%;
       width: 100%;
-      height: 55%;
+    }
+    .about-content {
+      height: 50%;
+      width: 100%;
       text-align: center;
       align-items: center;
 
@@ -345,32 +302,18 @@
         display: none;
       }
 
+      > * {
+        margin-left: 0;
+      }
+
       h3 {
         font-size: 4.5rem;
       }
 
       p {
+        font-size: 2.2rem;
         padding-right: 0;
-        font-size: 2rem;
-        padding: 0 2rem;
-      }
-    }
-
-    .apps-icons {
-      width: 100%;
-      height: 50%;
-
-      > div > img {
-        margin: 0 2rem;
-        width: 6rem;
-      }
-
-      &::before {
-        display: none;
-      }
-
-      .row2 {
-        transform: translateX(0%);
+        padding: 0 5rem;
       }
     }
 
@@ -378,28 +321,29 @@
       width: 100%;
       height: 50%;
       align-items: center;
+      text-align: center;
 
-      h3,
-      p {
-        text-align: center;
+      &::before {
+        display: none;
+      }
+
+      > * {
+        margin: 0;
       }
 
       h3 {
         font-size: 4.5rem;
-
-        &::before {
-          display: none;
-        }
       }
 
       p {
-        font-size: 2rem;
-        padding: 0 2rem;
+        font-size: 2.2rem;
+        padding: 0 5rem;
       }
+    }
 
-      > * {
-        margin-left: 0;
-      }
+    .apps-img {
+      width: 100%;
+      height: 50%;
     }
   }
 }
@@ -407,140 +351,132 @@
 // Top Tricks //
 
 .top-tricks {
-  display: flex;
-  flex-direction: row-reverse;
+  width: 100%;
   height: 80vh;
+  @extend %center;
+  background-color: rgb(253, 253, 253);
 
-  > div {
-    height: 100%;
-    @extend %center;
+  .swiper-button-next,
+  .swiper-button-prev{
+    color: $orange;
   }
 
-  .tt-heading {
-    width: 45%;
-    position: relative;
+  .swiper-container{
+    width: calc(100% - 30rem);
+    height: 70%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color: #fff;
+    
+    .swiper-slide{
+      display: flex;
+      width: 100%;
+      height: 100%;
+      cursor: grab;
 
-    h3 {
-      font-size: 6.5rem;
-      outline: 1.5rem solid rgba($orange, 0.2);
-      outline-offset: 10rem;
-      position: relative;
-      z-index: 2;
+      &:first-of-type{
 
-      &::before{
-        content: "";
-        position: absolute;
-        width: 15rem;
-        height: 15rem;
-        bottom: -5rem;
-        right: -5rem;
-        background: url(../img/black-pattern.svg) center no-repeat;
-        background-size: cover;
-        opacity: .05;
-        z-index: -1;
+        @extend %center;
+        position: relative;
+        z-index: 2;
+        background: url(../img/memphis-mini.png);
+
+        &::before{
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background: rgba(#fff, .5);
+          z-index: -1;
+        }
+
+        h3{
+          font-size: 7.5rem;
+          text-align: center;
+
+          span{
+            color: $orange;
+          }
+        }
       }
 
-      span {
-        color: $orange;
+      .slide-img{
+        width: 50%;
+        height: 100%;
+
+        img{
+          width: 100%;
+          height: 100%;
+        }
+
+        &1{
+          background: url(../img/top-tricks/tip1.png) center no-repeat;
+          background-size: cover;
+        }
+
+        &2{
+          background: url(../img/top-tricks/tip2.png) center no-repeat;
+          background-size: cover;
+        }
+
+        &3{
+          background: url(../img/top-tricks/tip3.png) center no-repeat;
+          background-size: cover;
+        }
+        &4{
+          background: url(../img/top-tricks/tip44.png) center no-repeat;
+          background-size: cover;
+        }
+        &5{
+          background: url(../img/top-tricks/tip5.png) center no-repeat;
+          background-size: cover;
+        }
+        &6{
+          background: url(../img/top-tricks/tip6.png) center no-repeat;
+          background-size: cover;
+        }
       }
-    }
-  }
 
-  .slider {
-    width: 55%;
-    position: relative;
+      .slide-content{
+        width: 50%;
+        height: 100%;
+        @extend %center;
+        align-items: start;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+        background: url(../img/memphis-mini.png);
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: -5rem;
-      width: 20rem;
-      height: 20rem;
-      background: url(../img/black-pattern.svg) center no-repeat;
-      background-size: cover;
-      opacity: 0.1;
-      z-index: -1;
-    }
+        &::before{
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background: rgba(#fff, .7);
+          z-index: -1;
+        }
 
-    .swiper-container {
-      height: 80%;
-      width: 80%;
-      z-index: 9;
-      margin-left: 15rem;
-      // border: 1px solid rgba($orange, 0.2);
-      background-color: #fff;
+        > *{
+          margin: 0 10rem 0 5rem;
+        }
 
-      .swiper-button-next,
-      .swiper-button-prev {
-        color: $orange;
-      }
+        h4{
+          font-size: 2.8rem;
+          margin-bottom: 1.5rem;
 
-      .swiper-wrapper {
-        
-        > div {
-          display: flex;
-          flex-direction: column;
-          background-color: #fff;
-          cursor: grab;
-
-          .img {
-            height: 60%;
+          span{
+            color: $orange;
           }
+        }
 
-          .img1 {
-            background: url(../img/top-tricks/tip1.jpg) center no-repeat;
-            background-size: cover;
-          }
-
-          .img2 {
-            background: url(../img/top-tricks/tip2.png) center no-repeat;
-            background-size: cover;
-          }
-          .img3 {
-            background: url(../img/top-tricks/tip3.png) center no-repeat;
-            background-size: cover;
-          }
-          .img4 {
-            background: url(../img/top-tricks/tip4.png) center no-repeat;
-            background-size: cover;
-          }
-          .img5 {
-            background: url(../img/top-tricks/tip5.png) center no-repeat;
-            background-size: cover;
-          }
-          .img6 {
-            background: url(../img/top-tricks/tip6.png) center no-repeat;
-            background-size: cover;
-          }
-
-          .content {
-            height: 40%;
-            @extend %center;
-            align-items: start;
-            flex-direction: column;
-            background-color: whitesmoke;
-
-            > * {
-              margin: 0 5rem;
-            }
-
-            h4 {
-              font-size: 2.5rem;
-              margin-bottom: 1rem;
-
-              span {
-                color: $orange;
-              }
-            }
-
-            p {
-              font-size: 1.6rem;
-              color: $lightgray;
-              font-weight: 200;
-              line-height: 1.5;
-            }
-          }
+        p{
+          font-size: 1.8rem;
+          color: $lightgray;
+          font-weight: 200;
+          line-height: 1.75;
         }
       }
     }
@@ -549,54 +485,52 @@
 
 @media only screen and (max-width: 768px){
   .top-tricks{
-    flex-direction: column;
-    height: 100vh;
+    height: 90vh;
 
-    .tt-heading{
-      width: 100%;
-      height: 10%;
+    .swiper-container{
+      width: 90%;
+      height: 80%;
 
-      h3{
-        font-size: 4.5rem;
+      .swiper-slide{
+
+        flex-direction: column;  
         
-        outline: none;
-
-        &::before{
-          display: none;
+        .slide-img{
+          width: 100%;
+          height: 40%;
         }
-      }
-    }
 
-    .slider{
-      width: 100%;
-      height: 90%;
+        .slide-content{
+          width: 100%;
+          height: 60%;
 
-      &::before{
-        display: none;
-      }
+          > *{
+            margin: 0 5rem;
+          }
 
-      .swiper-container{
-        width: 90%;
-        height: 80%;
-        margin-left: 0;
-        margin: 0 auto;
+          h4{
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+          }
 
-        .swiper-wrapper{
-          > div {
+          p{
+            font-size: 1.6rem;
+            line-height: 1.5;
+          }
+        }
+
+        &:first-of-type{
+          h3{
+            font-size: 5.5rem;
+            padding: 0 5rem;
   
-            .img{
-              height: 40%;
-            }
-            .content{
-              height: 60%;
-
-              h4{
-                font-size: 2.2rem;
-              }
+            span{
+              color: $orange;
             }
           }
         }
-      }
+      } 
+     
     }
   }
 }
