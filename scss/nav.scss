@@ -157,31 +157,56 @@ nav {
 
 // FOOTER //
 
-footer {
-  height: 50vh;
-  border: 1px solid orange;
-
-  .container {
-    width: calc(100% - 30rem);
-    margin: 0 auto;
-    height: 100%;
+  footer{
+    height: 40vh;
+    background-color: #F2F2F2;
     display: flex;
-    justify-content: space-between;
+    padding-top: 5rem;
+    padding-right: 15rem;
+    padding-left: 15rem;
+          .blog{
+            flex-direction: column;
+            width: 30%;
+            @extend %center;
+                img{
+                   width: 15%;
+                  }
+                  p{
+                    font-size: 20px;
+                    margin-top: 20px;
+                  }
+              } 
+          .contact{
+            flex-direction: column;
+            width: 30%;
+            @extend %center;
+                img{
+                   width: 15%;
+                  }
+                  p{
+                    font-size: 20px;
+                    margin-top: 20px;
+                  }
+          }
+          .social{
+            flex-direction: column;
+            width: 30%;
+            @extend %center;
+            .social-icons{
+              margin-top: 20px;
+              display: flex;
+              @extend %center;
+              img{
+                   width: 10%;
+                   margin-left: 10px;
+                  }
 
-    > * {
-      height: 100%;
-      width: 50%;
-      border: 1px solid red;
-      @extend %center;
-    }
-  }
-
-  .social-media {
-    flex-direction: column;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-}
+            }
+                
+                  p{
+                    font-size: 20px;
+                    margin-top: 20px;
+                  }
+              } 
+          } 
+      
