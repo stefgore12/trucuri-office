@@ -459,78 +459,129 @@
   }
 }
 
-// WORK //
+// INFO //
 
-.work {
-  height: 60vh;
+.info {
+  height: 110vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   background: $verylightgray;
 
-  > div {
-    height: 100%;
-    width: 50%;
+  > div{
+    height: 50%;
+    width: 100%;
+    display: flex;
+
+    > div{
+      width: 50%;
+      height: 100%;
+    }
   }
 
-  &-img {
+  &-1-img{
     background: url(../img/work.jpg) center no-repeat;
     background-size: cover;
-    position: relative;
-    z-index: 2;
+  }
 
-    &::before {
+  &-2-img{
+    background: url(../img/work2.jpg) center no-repeat;
+    background-size: cover;
+  }
+
+  &-1-img,
+  &-2-img{
+    position: relative;
+
+    &::before{
       content: "";
       position: absolute;
-      width: 100%;
-      height: 100%;
       top: 0;
       left: 0;
+      width: 100%;
+      height: 100%;
       background: rgba(#fff, 0.5);
     }
   }
 
-  &-content {
+  &-1-content,
+  &-2-content{
     @extend %center;
     justify-content: start;
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
 
-    h3 {
-      font-size: 3.5rem;
-      margin: 0 15rem 0 10rem;
+    h3{
+      font-size: 3rem;
+      font-weight: 300;
       border-left: 5px solid $orange;
       padding-left: 2.5rem;
 
-      span {
+      span{
         color: $orange;
       }
     }
   }
-}
 
-@media only screen and (max-width: 768px) {
-  .work {
-    height: 100vh;
-    flex-direction: column-reverse;
+  .info-1{
+    flex-direction: row;
+  }
 
-    > div {
-      width: 100%;
-      height: 50%;
+  &-1-content{
+    h3{
+      margin: 0 15rem 0 10rem; 
     }
+  }
 
-    &-content {
-
-      h3 {
-        padding: 0 2.5rem;
-        margin: 0;
-        text-align: center;
-        font-size: 2.8rem;
-        border: none;
-      }
+  &-2-content{
+    h3{
+      margin: 0 10rem 0 15rem; 
     }
   }
 }
+
+@media only screen and (max-width: 768px){
+  .info{
+    height: 200vh;
+
+    > div{
+      height: 100vh;
+      flex-direction: column;
+
+      > div{
+        width: 100%;
+        height: 50%;
+        text-align: center;
+      }
+    }
+
+    .info-1{
+      flex-direction: column-reverse;
+    }
+    
+    &-1-content,
+    &-2-content{
+
+      h3{
+        border-left: none;
+        padding-left: 0;
+        padding: 0 2.5rem;
+        font-size: 2.2rem;
+        line-height: 1.5;
+      }
+    }
+
+    &-1-content{
+      h3{
+        margin: 0; 
+      }
+    }
+  
+    &-2-content{
+      h3{
+        margin: 0; 
+      }
+    }
+  }
+} 
 
 // Top Tricks //
 
